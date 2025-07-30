@@ -38,7 +38,6 @@ resource "aws_instance" "demo" {
   ami = "ami-0dee22c13ea7a9a67"
   instance_type = "t2.micro"
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
-  subnet_id = "subnet-07dc040fe117beff4"
   key_name = aws_key_pair.example.key_name
 
   provisioner "remote-exec" {
@@ -54,7 +53,7 @@ resource "aws_instance" "demo" {
     connection {
       type        = "ssh"
       user        = "ubuntu" # Default user for Ubuntu AMI
-      private_key = file("C:/bhaskar-notes/terraform/ec2_vpc/provisioners/my-key")
+      private_key = file("/provisioners/my-key") # Path to your private key
       host        = self.public_ip
     }
   } 
