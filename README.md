@@ -1,4 +1,3 @@
-Teraform
 This repository contains Terraform code modules for automating AWS cloud infrastructure provisioning. The primary goal is to enable predictable and reusable infrastructure deployment using Infrastructure as Code (IaC) practices.
 
 Overview
